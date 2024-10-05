@@ -31,11 +31,6 @@ WORKDIR=/tmp/proot-distro-bootstrap
 
 # This is used to generate proot-distro plug-ins.
 TAB=$'\t'
-CURRENT_VERSION=$(git tag | sort -Vr | head -n1)
-if [ -z "$CURRENT_VERSION" ]; then
-	echo "[!] Cannot detect the latest proot-distro version tag."
-	exit 1
-fi
 
 # Usually all newly created tarballs are uploaded into GitHub release of
 # current proot-distro version.
