@@ -1,7 +1,7 @@
 dist_name="Debian"
 
 # Put only current stable version here!
-dist_version="bookworm"
+dist_version="stretch"
 
 bootstrap_distribution() {
 	sudo rm -f "${ROOTFS_DIR}"/debian-"${dist_version}"-*.tar.xz
@@ -17,7 +17,7 @@ bootstrap_distribution() {
 			"${dist_version}" \
 			"${WORKDIR}/debian-${dist_version}-$(translate_arch "$arch")"
 		archive_rootfs "${ROOTFS_DIR}/debian-${dist_version}-$(translate_arch "$arch")-pd-${CURRENT_VERSION}.tar.xz" \
-			"debian-${dist_version}-$(translate_arch "$arch")"
+			"debian-${dist_version}-$(translate_arch "$arch")" https://archive.debian.org/debian/
 	done
 	unset arch
 }
